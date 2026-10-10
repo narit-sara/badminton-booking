@@ -288,6 +288,10 @@ export default function BannerFilter({ filter, setFilter, onSubmit }: BannerFilt
         <ul className="space-y-2.5 text-xs font-medium text-slate-300 leading-relaxed pl-2">
           <li className="flex items-start gap-2">
             <span className="text-sky-400 font-bold">•</span>
+            <span>การจองสนามต้องล็อกอินผ่านอีเมลเพื่อดูประวัติการจองย้อนหลังและนำไปยื่นกับพนักงานเค้าท์เตอร์</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-sky-400 font-bold">•</span>
             <span>กรุณาเดินทางมาถึงสนามก่อนเวลาจองอย่างน้อย 10-15 นาที และหากจองเเล้ว ไม่มาชำระเงินหน้าเค้าท์เตอร์ ภายใน10-15นาที ถือว่า การจองเป็นโมฆะ</span>
           </li>
           <li className="flex items-start gap-2">

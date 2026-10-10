@@ -35,7 +35,7 @@
 ```env
 GOOGLE_CLIENT_ID=กรอกรหัส Client ID ของคุณที่นี่
 GOOGLE_CLIENT_SECRET=กรอกรหัส Client Secret ของคุณที่นี่
-NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL=https://badminton-booking-lemon.vercel.app
 NEXTAUTH_SECRET=รหัสลับสำหรับเข้ารหัส
 
 💻 วิธีการติดตั้งและรันโปรเจกต์ในเครื่อง (Installation & Usage)
