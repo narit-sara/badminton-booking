@@ -10,11 +10,11 @@ import BookingSuccessModal from '@/components/BookingSuccessModal';
 const INITIAL_COURTS: Court[] = [
   { id: 1, name: 'คอร์ท 1', status: 'green' },
   { id: 2, name: 'คอร์ท 2', status: 'green' },
-  { id: 3, name: 'คอร์ท 3', status: 'yellow' },
+  { id: 3, name: 'คอร์ท 3', status: 'green' },
   { id: 4, name: 'คอร์ท 4', status: 'red' },
   { id: 5, name: 'คอร์ท 5', status: 'green' },
   { id: 6, name: 'คอร์ท 6', status: 'green' },
-  { id: 7, name: 'คอร์ท 7', status: 'yellow' },
+  { id: 7, name: 'คอร์ท 7', status: 'green' },
   { id: 8, name: 'คอร์ท 8', status: 'green' },
   { id: 9, name: 'คอร์ท 9', status: 'green' },
   { id: 10, name: 'คอร์ท 10', status: 'green' },

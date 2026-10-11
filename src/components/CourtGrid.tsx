@@ -5,7 +5,7 @@ import React from 'react';
 export interface Court {
   id: number;
   name: string;
-  status: 'green' | 'yellow' | 'red';
+  status: 'green' | 'red';
 }
 
 interface CourtGridProps {
@@ -112,14 +112,11 @@ export default function CourtGrid({
           let bgStyle = '';
           let statusText = '';
 
+          // เช็กแค่ green (ว่าง) และ red (จองแล้ว)
           if (court.status === 'green') {
             bgStyle = isSelected
               ? 'bg-emerald-600/90 border-2 border-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.6)]'
               : 'bg-emerald-600/80 hover:bg-emerald-600 border border-emerald-500/50';
-          } else if (court.status === 'yellow') {
-            bgStyle = isSelected
-              ? 'bg-amber-500 border-2 border-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.6)]'
-              : 'bg-amber-500/90 hover:bg-amber-500 border border-amber-400/50';
           } else {
             bgStyle = 'bg-rose-950/60 border border-rose-900/50 opacity-60 cursor-not-allowed';
             statusText = 'จองแล้ว';
@@ -182,7 +179,6 @@ export default function CourtGrid({
             🏸 บริการเช่าอุปกรณ์เพิ่มเติม
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
             {/* ไม้แบดมินตัน */}
             <div className="p-3 bg-[#0b1329] border border-slate-800 rounded-xl flex items-center justify-between">
               <label className="flex items-center gap-3 cursor-pointer">
@@ -201,7 +197,7 @@ export default function CourtGrid({
                 <div className="flex items-center gap-2 bg-[#030712] border border-slate-700 rounded-lg px-2 py-1">
                   <button
                     type="button"
-                    onClick={() => setRacketCount((prev) => Math.max(1, prev - 1))}
+                    onClick={() => setRacketCount((prev) => Math.max(1, (prev as number) - 1))}
                     className="text-slate-400 hover:text-white font-bold text-sm px-1 cursor-pointer"
                   >
                     -
@@ -211,7 +207,7 @@ export default function CourtGrid({
                   </span>
                   <button
                     type="button"
-                    onClick={() => setRacketCount((prev) => prev + 1)}
+                    onClick={() => setRacketCount((prev) => (prev as number) + 1)}
                     className="text-slate-400 hover:text-white font-bold text-sm px-1 cursor-pointer"
                   >
                     +
@@ -238,7 +234,7 @@ export default function CourtGrid({
                 <div className="flex items-center gap-2 bg-[#030712] border border-slate-700 rounded-lg px-2 py-1">
                   <button
                     type="button"
-                    onClick={() => setShoesCount((prev) => Math.max(1, prev - 1))}
+                    onClick={() => setShoesCount((prev) => Math.max(1, (prev as number) - 1))}
                     className="text-slate-400 hover:text-white font-bold text-sm px-1 cursor-pointer"
                   >
                     -
@@ -248,7 +244,7 @@ export default function CourtGrid({
                   </span>
                   <button
                     type="button"
-                    onClick={() => setShoesCount((prev) => prev + 1)}
+                    onClick={() => setShoesCount((prev) => (prev as number) + 1)}
                     className="text-slate-400 hover:text-white font-bold text-sm px-1 cursor-pointer"
                   >
                     +
@@ -256,7 +252,6 @@ export default function CourtGrid({
                 </div>
               )}
             </div>
-
           </div>
         </div>
 
@@ -285,12 +280,14 @@ export default function CourtGrid({
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
+              type="button"
               onClick={onBack}
               className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold rounded-xl transition w-1/2 sm:w-auto cursor-pointer"
             >
               ย้อนกลับ
             </button>
             <button
+              type="button"
               onClick={onConfirm}
               disabled={selectedCourts.length === 0}
               className="px-8 py-3 bg-gradient-to-r from-sky-500 to-blue-600 hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold rounded-xl shadow-[0_0_20px_rgba(56,189,248,0.4)] transition w-1/2 sm:w-auto cursor-pointer"
